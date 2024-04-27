@@ -35,6 +35,21 @@ function displayIcon(response){
 
     
 }
+function rightNow(){
+    
+    let city = 'Paris'
+  
+    let apiKey = "b2a5adcct04b33178913oc335f405433";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  
+    axios.get(apiUrl).then(displayTemperature);
+    axios.get(apiUrl).then(displayWeatherDescription);
+    axios.get(apiUrl).then(displayWindSpeed);
+    axios.get(apiUrl).then(displayHumidity);
+    axios.get(apiUrl).then(displayIcon);
+
+}
+rightNow()
   
   function search(event) {
     event.preventDefault();
